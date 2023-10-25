@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Tickets</title>
+    <!-- Include any CSS or styling here for your elegant and mobile-responsive design -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; /* Set the background to white */
+            color: #000; /* Set the text color to black */
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+       .event-image {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .description {
+            text-align: left;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #000; /* Set the input border to black */
+        }
+        .get-tickets-button {
+            background-color: #000; /* Set the background color to black */
+            color: #fff; /* Set the text color to white */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RE-AWAKENING: The Halloween Experience</h1>
+        <img class="event-image" src="event1.jpeg" alt="Event Image">
+        <div class="description">
+            <h2>Description:</h2>
+            <p>This is where you can provide a detailed description of your event. Include all the information participants need to know.</p>
+        </div>
+        <div class="form-container">
+            {% csrf_token %}
+            <form method="post">
+                <label for="email"><b>Enter your email Address</b></label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <button class="get-tickets-button" type="submit">Get Tickets</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
